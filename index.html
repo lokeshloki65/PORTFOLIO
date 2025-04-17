@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokesh M | AI Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #00c3ff;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    header {
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      margin-top: 80px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid #00c3ff;
+      box-shadow: 0 0 30px rgba(0, 195, 255, 0.6);
+      animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #00c3ff, #ff6a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typed-text {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      color: #eee;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-size: 1rem;
+      color: #aaa;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #0fa8ce;
+      color: white;
+      box-shadow: 0 0 15px rgba(9, 224, 189, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+
+      .menu {
+        gap: 15px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .typed-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Lokesh<span>.M</span></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <header data-aos="fade-up">
+    <img src="image/lokeshM1.jpg" alt="Lokesh M" class="profile-img">
+    <h1>Hi, I'm Lokesh M</h1>
+    <div class="typed-text">
+      <span id="typed"></span>
+    </div>
+  </header>
+
+  <footer>
+    &copy; 2025 Lokesh M | All Rights Reserved
+  </footer>
+
+  <button class="arrow-btn" onclick="window.location.href='about.html'">➡</button>
+
+  <script>
+    AOS.init();
+
+    const typed = new Typed('#typed', {
+      strings: [
+        'Artificial Intelligence and Data Science ',
+        'Web Developer 💻',
+        'Java, Python Programmer 🐍',
+        
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
