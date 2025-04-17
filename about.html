@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
 
     html, body {
       height: 100%;
-      overflow: hidden; /* Remove scrollbar */
+      overflow: hidden;
     }
 
     body {
@@ -23,8 +23,6 @@
       color: white;
       display: flex;
       flex-direction: column;
-      padding: 0;
-      margin: 0;
     }
 
     nav {
@@ -69,14 +67,19 @@
       border-bottom: 2px solid #00c3ff;
     }
 
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
     .container {
-      flex: 1;
+      height: calc(100vh - 80px); /* Full screen minus navbar */
+      margin-top: 80px;
+      padding: 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px;
-      margin-top: 100px;
       background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,195,255,0.05));
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
@@ -85,10 +88,6 @@
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
-    }
-    .menu a.active {
-      color: #00c3ff;
-      border-bottom: 2px solid #00c3ff;
     }
 
     h1 {
@@ -165,7 +164,8 @@
     @media (max-width: 768px) {
       .container {
         padding: 25px;
-        margin: 120px 20px 0;
+        margin: 100px 20px 0;
+        height: auto;
       }
 
       h1 {
@@ -189,14 +189,11 @@
       <a href="qualification.html">Qualification</a>
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
-
       <a href="contac.html">Contact</a>
-  
     </div>
   </nav>
 
   <div class="container">
-    <div class="container">
     <h1>About Me</h1>
     <p class="about-text">
       I'm <span>Lokesh</span> from <span>Vellore</span>, an <span>enthusiastic and dedicated</span> 
@@ -206,11 +203,11 @@
       I am eager to apply my skills, work on <span>innovative projects</span>, and grow professionally in the field of technology. 
       My aspiration is to become a <span>well-rounded software and web developer</span>.
     </p>
-    
-    
+  </div>
 
   <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
   <button class="arrow-btn" onclick="window.location.href='skill.html'">➡</button>
+
   <script>
     const currentPage = window.location.pathname.split("/").pop();
     const menuLinks = document.querySelectorAll(".menu a");
@@ -224,4 +221,3 @@
 
 </body>
 </html>
-
