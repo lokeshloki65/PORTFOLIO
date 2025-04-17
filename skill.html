@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: #000;
+      color: white;
+    }
+
+    nav {
+      width: 100%;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #00c3ff;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .container {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 30px 5%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 30px;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 180px;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    .skill-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid #0ff;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 999;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        padding: 20px;
+      }
+
+      .skill-card img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .skill-card h3 {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Lokesh<span>.M</span></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="skill-card">
+      <img src="image/html5.jpg" alt="HTML">
+      <h3>HTML</h3>
+    </div>
+    <div class="skill-card">
+      <img src="image/css 8.jpeg" alt="CSS">
+      <h3>CSS</h3>
+    </div>
+    <div class="skill-card">
+      <img src="image/java 3.png" alt="Java">
+      <h3>Java</h3>
+    </div>
+    <div class="skill-card">
+      <img src="image/py1.jpg" alt="Python">
+      <h3>Python</h3>
+    </div>
+    <div class="skill-card">
+      <img src="image/mysql11.png" alt="MySQL">
+      <h3>MySQL</h3>
+    </div>
+    <div class="skill-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C">
+      <h3>C Language</h3>
+    </div>
+  </div>
+
+  <button class="home-btn" onclick="navigateToAbout()">⬅</button>
+  <button class="arrow-btn" onclick="navigateToQualifications()">➡</button>
+
+  <script>
+    function navigateToAbout() {
+      window.location.href = 'about.html';
+    }
+
+    function navigateToQualifications() {
+      window.location.href = 'qualification.html';
+    }
+  </script>
+   <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+</body>
+</html>

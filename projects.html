@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #00c3ff;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .project-section {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      padding: 30px 40px;
+      animation: fadeIn 1.5s ease-in-out;
+      overflow-y: auto;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.5);
+    }
+
+    .project-card h3 {
+      color: #00c3ff;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00c3ff;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #03a9f4;
+      transform: scale(1.05);
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 1001;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .project-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Lokesh<span>.M</span></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="project-section">
+    <div class="project-card">
+      <h3>E-Commerce Platform</h3>
+      <p>An online grocery shopping site with payment, login, and order tracking features.</p>
+      <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Weather Analysis</h3>
+      <p>Real-time weather and climate data analysis using APIs and visualization tools.</p>
+      <a href="https://github.com/yourusername/project2" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Chat Application</h3>
+      <p>WhatsApp-like Java chat app with real-time messaging and voice messaging.</p>
+      <a href="https://github.com/yourusername/project3" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>AI Chatbot</h3>
+      <p>Smart multilingual chatbot integrated with Farm2Bag.com for order and product support.</p>
+      <a href="https://github.com/yourusername/project4" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='qualification.html'">⬅</button>
+  <button class="arrow-btn" onclick="window.location.href='certifications.html'">➡</button>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
