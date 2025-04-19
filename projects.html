@@ -15,7 +15,7 @@
     }
 
     html, body {
-      height: 100vh;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -76,11 +76,13 @@
 
     .project-section {
       flex: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 30px;
       padding: 30px 40px;
-      overflow-y: auto;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
     }
 
     .project-card {
@@ -93,6 +95,7 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInCard 0.8s ease forwards;
+      width: 350px;
     }
 
     .project-card:nth-child(1) { animation-delay: 0.2s; }
@@ -226,7 +229,7 @@
 
     <div class="project-card">
       <h3><i class="fas fa-robot"></i>Ai-meme_generator</h3>
-      <p>AI Meme Generator is a smart tool that creates hilarious memes by combining AI-generated captions</p>
+      <p>AI Meme Generator is a smart tool that creates hilarious memes by combining AI-generated captions.</p>
       <a href="https://github.com/lokeshloki65/Ai-meme_generator" target="_blank">View Project</a>
     </div>
 
