@@ -18,6 +18,7 @@
       color: white;
       padding-top: 120px;
     }
+
     .menu a.active {
       color: #00c3ff;
       border-bottom: 2px solid #00c3ff;
@@ -70,7 +71,6 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       padding: 40px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     .qualification-card {
@@ -80,6 +80,30 @@
       text-align: center;
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
       transition: transform 0.3s, box-shadow 0.3s;
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    /* Delay each card */
+    .qualification-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .qualification-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .qualification-card:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .qualification-card:hover {
@@ -136,16 +160,6 @@
       transform: scale(1.1);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 <body>
@@ -158,7 +172,6 @@
       <a href="qualification.html">Qualification</a>
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
-
       <a href="contac.html">Contact</a>
     </div>
   </nav>
@@ -173,22 +186,22 @@
 
     <div class="qualification-card">
       <img src="image/ssvms.JPG" alt="SSLC">
-      <h3>SSLC (10th Grade)</h3>
+      <h3>HSE (12th Grade)</h3>
       <p>Institution: Sri Saraswathi Matric School, Vellore</p>
-      <p>Year: 2020 - 2021</p>
+      <p>Year: 2022 - 2023</p>
     </div>
 
     <div class="qualification-card">
       <img src="image/ssvms.JPG" alt="HSE">
-      <h3>HSE (12th Grade)</h3>
+      <h3>SSLC (10th Grade)</h3>
       <p>Institution: Sri Saraswathi Matric School, Vellore</p>
-      <p>Year: 2022 - 2023</p>
-      <p>Grade: 62.5%</p>
+      <p>Year: 2020 - 2021</p>
     </div>
   </div>
 
   <button class="home-btn" onclick="window.location.href='skill.html'">⬅</button>
   <button class="arrow-btn" onclick="window.location.href='projects.html'">➡</button>
+  
   <script>
     const currentPage = window.location.pathname.split("/").pop();
     const menuLinks = document.querySelectorAll(".menu a");
