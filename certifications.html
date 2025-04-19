@@ -5,26 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Certifications | Lokesh M</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
 
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
     body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      background: #000;
+      color: white;
       padding-top: 120px;
-      overflow-x: hidden;
+      padding-bottom: 100px;
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
       position: fixed;
       width: 100%;
       top: 0; left: 0;
-      background: rgba(18,18,18,0.95);
+      background: rgba(18, 18, 18, 0.95);
       padding: 15px 50px;
       display: flex;
       justify-content: space-between;
@@ -38,6 +45,7 @@
       font-weight: 700;
       color: #fff;
     }
+
     .logo span {
       color: #00c3ff;
     }
@@ -63,53 +71,62 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 40px;
+      margin: 10px 0;
       color: #00c3ff;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(0,195,255,0.4);
     }
 
     .cert-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       padding: 0 30px;
+      flex: 1;
     }
 
     .cert-card {
-      background: rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);
+      border: 2px solid rgba(0, 195, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      height: 190px;
       overflow: hidden;
-      transition: transform 0.3s;
-      box-shadow: 0 10px 20px rgba(0,195,255,0.15);
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
     }
 
     .cert-card:hover {
       transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
     }
 
     .cert-card img {
-  width: 100%;
-  height: 160px; /* Or 220px for a little larger */
-  object-fit: cover;
-  display: block;
-  border-radius: 15px 15px 0 0;
-  cursor: pointer;
-}
-
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 18px 18px 0 0;
+      cursor: pointer;
+    }
 
     .cert-info {
-      padding: 15px;
+      padding: 10px;
+      text-align: center;
     }
 
     .cert-info h3 {
-      color: #03a9f4;
+      color: #00c3ff;
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .cert-info p {
-      margin-top: 8px;
-      font-size: 0.9rem;
+      margin-top: 5px;
+      font-size: 0.8rem;
       color: #ccc;
     }
 
@@ -122,38 +139,37 @@
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
+      z-index: 1001;
     }
 
     .home-btn {
       left: 20px;
       background: #00c3ff;
       color: white;
-      box-shadow: 0 0 15px rgba(0,195,255,0.7);
+      box-shadow: 0 0 15px rgba(0,195,255,0.8);
     }
 
     .arrow-btn {
       right: 20px;
       background: #ff9800;
       color: white;
-      box-shadow: 0 0 15px rgba(255,152,0,0.7);
+      box-shadow: 0 0 15px rgba(255,152,0,0.8);
     }
 
     .home-btn:hover, .arrow-btn:hover {
       transform: scale(1.1);
     }
 
-    /* Lightbox style */
     .lightbox {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.8);
-      display: flex;
+      background: rgba(0,0,0,0.9);
+      display: none;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       z-index: 2000;
-      display: none;
     }
 
     .lightbox img {
@@ -174,7 +190,6 @@
 
     .lightbox .prev { left: 10px; }
     .lightbox .next { right: 10px; }
-
     .lightbox .close {
       position: absolute;
       top: 20px;
@@ -182,6 +197,29 @@
       font-size: 5rem;
       color: red;
       cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -199,34 +237,49 @@
     </div>
   </nav>
 
-  <h1 data-aos="fade-down">🎖️ My Certifications</h1>
+  <h1>🎓My Certifications🎖️</h1>
 
-  <div class="cert-grid" data-aos="fade-up">
+  <div class="cert-grid">
     <div class="cert-card">
       <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(0)" />
       <div class="cert-info">
         <h3>Gen-AI with Cloud</h3>
-        <p>Completed a training program on "Gen-AI with Cloud" at Kongu Engineering College, Erode.
-          Held on 5th October 2024.</p>
+        <p>Kongu Engineering College - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certifications 33 blg.jpg" alt="National Level Hackathon
-      " onclick="openLightbox(1)" />
+      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(1)" />
       <div class="cert-info">
-        <h3>National Level Hackathon</h3>
-        <p>Participated in a 24-hour National Level Hackathon conducted by Shridevi Institute & ShriTEK Innovations, Tumakuru.
-          Held on 29th October 2024.</p>
+        <h3>National Hackathon</h3>
+        <p>Shridevi Institute - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certfications 22.jpg" alt="Mastering IoT Foundations
-      " onclick="openLightbox(2)" />
+      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(2)" />
       <div class="cert-info">
-        <h3>Mastering IoT Foundations
-        </h3>
-        <p>Attended a one-day workshop on IoT Foundations conducted by Kongu Engineering College.
-          Held on 20th February 2025.</p>
+        <h3>IoT Workshop</h3>
+        <p>Kongu Engineering College - Feb 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(3)" />
+      <div class="cert-info">
+        <h3>Hackathon</h3>
+        <p>Kongu Engineering College - MAR 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(4)" />
+      <div class="cert-info">
+        <h3>National Level Technical Symposium</h3>
+        <p>ERODE SENGUNTHAR COLLEGE - 23rd April 2024</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certification erode.jpg" alt="Cloud Basics" onclick="openLightbox(5)" />
+      <div class="cert-info">
+        <h3>Two days Seminar</h3>
+        <p>ERODE SENGUNTHAR COLLEGE - AUG 2024</p>
       </div>
     </div>
   </div>
@@ -241,15 +294,14 @@
   <button class="home-btn" onclick="window.location.href='projects.html'">⬅</button>
   <button class="arrow-btn" onclick="window.location.href='contac.html'">➡</button>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
     const certImages = [
       "certifications_kongu .jpg",
-
       "certifications 33 blg.jpg",
-      "certfications 22.jpg"
+      "certfications 22.jpg",
+      "certfication kongu hackathon.jpg",
+      "Whats certfi.jpg",
+      "certification erode.jpg"
     ];
     let currentImageIndex = 0;
 
@@ -264,19 +316,23 @@
     }
 
     function changeSlide(direction) {
-      currentImageIndex += direction;
-      if (currentImageIndex < 0) currentImageIndex = certImages.length - 1;
-      if (currentImageIndex >= certImages.length) currentImageIndex = 0;
+      currentImageIndex = (currentImageIndex + direction + certImages.length) % certImages.length;
       document.getElementById("lightboxImage").src = certImages[currentImageIndex];
     }
 
-    // Highlight menu link
+    // Highlight active nav link
     const currentPage = window.location.pathname.split("/").pop();
-    const menuLinks = document.querySelectorAll(".menu a");
-    menuLinks.forEach(link => {
+    document.querySelectorAll(".menu a").forEach(link => {
       if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
       }
+    });
+
+    // Staggered animation delay
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cert-card').forEach((card, i) => {
+        card.style.animationDelay = `${i * 0.2}s`;
+      });
     });
   </script>
 </body>
