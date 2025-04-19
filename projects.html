@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Lokesh M</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -77,10 +77,9 @@
     .project-section {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       padding: 30px 40px;
-      animation: fadeIn 1.5s ease-in-out;
       overflow-y: auto;
     }
 
@@ -91,6 +90,23 @@
       text-align: center;
       box-shadow: 0 0 15px rgba(0, 195, 255, 0.2);
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInCard 0.8s ease forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.2s; }
+    .project-card:nth-child(2) { animation-delay: 0.4s; }
+    .project-card:nth-child(3) { animation-delay: 0.6s; }
+    .project-card:nth-child(4) { animation-delay: 0.8s; }
+    .project-card:nth-child(5) { animation-delay: 1s; }
+    .project-card:nth-child(6) { animation-delay: 1.2s; }
+
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .project-card:hover {
@@ -162,19 +178,9 @@
     }
 
     @media (max-width: 768px) {
-      .project-section {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -197,26 +203,39 @@
     <div class="project-card">
       <h3><i class="fas fa-cloud-sun"></i>Weather Analysis</h3>
       <p>Real-time weather and climate data analysis using APIs and visualization tools.</p>
-      <a href="https://weather-analysis-6.onrender.com/" target="_blank">View</a>
+      <a href="https://github.com/yourusername/project2" target="_blank">View</a>
     </div>
 
     <div class="project-card">
       <h3><i class="fas fa-robot"></i>Chatbot</h3>
       <p>Smart multilingual chatbot integrated with Farm2Bag.com for order and product support.</p>
-      <a href="https://chatbot-1-uzj5.onrender.com/" target="_blank">View</a>
+      <a href="https://github.com/yourusername/project4" target="_blank">View</a>
     </div>
 
     <div class="project-card">
       <h3><i class="fas fa-comments"></i>Chat Application</h3>
       <p>WhatsApp-like Java chat app with real-time messaging and voice messaging.</p>
-      <a href="https://github.com/lokeshloki65/chatapplication" target="_blank">View Project</a>
+      <a href="https://github.com/yourusername/project3" target="_blank">View Project</a>
     </div>
 
     <div class="project-card">
-     <h3><i class="fas fa-eye"></i> Exam-face-recognition</h3>
-      <p>AI-based exam proctoring system that uses facial recognition technology to verify and continuously monitor the identity of candidates during online examinations..</p>
+      <h3><i class="fas fa-eye"></i>Exam Face Recognition</h3>
+      <p>A robust AI-based proctoring system using facial recognition to verify and monitor candidates during exams.</p>
       <a href="https://github.com/lokeshloki65/exam-face-recognition" target="_blank">View Project</a>
-    </div>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-robot"></i>Ai-meme_generator</h3>
+      <p>AI Meme Generator is a smart tool that creates hilarious memes by combining AI-generated captions</p>
+      <a href="https://github.com/lokeshloki65/Ai-meme_generator" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-eye"></i>Face-Attendance-System</h3>
+      <p>Face Recognition Attendance System by identifying faces using real-time facial recognition technology.</p>
+      <a href="https://github.com/lokeshloki65/Face-Recognition-Attendance-System" target="_blank">View Project</a>
+    </div>
+  </div>
 
   <button class="home-btn" onclick="window.location.href='qualification.html'">⬅</button>
   <button class="arrow-btn" onclick="window.location.href='certifications.html'">➡</button>
