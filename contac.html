@@ -75,7 +75,6 @@
       grid-template-rows: repeat(2, 1fr);
       gap: 20px;
       padding: 20px 40px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     .contact-card {
@@ -85,6 +84,9 @@
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 195, 255, 0.15);
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
     }
 
     .contact-card:hover {
@@ -152,7 +154,6 @@
       transform: scale(1.1);
     }
 
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -163,6 +164,15 @@
         transform: translateY(0);
       }
     }
+
+    /* Staggered animation delays */
+    .contact-card:nth-child(1) { animation-delay: 0.2s; }
+    .contact-card:nth-child(2) { animation-delay: 0.4s; }
+    .contact-card:nth-child(3) { animation-delay: 0.6s; }
+    .contact-card:nth-child(4) { animation-delay: 0.8s; }
+    .contact-card:nth-child(5) { animation-delay: 1s; }
+    .contact-card:nth-child(6) { animation-delay: 1.2s; }
+
   </style>
 </head>
 <body>
@@ -198,7 +208,7 @@
     <div class="contact-card">
       <img src="image/github.png" alt="GitHub">
       <h3>GitHub</h3>
-      <button onclick="window.open('https://github.com/lokeshloki65', '_blank')">View Repositories</button>
+      <button onclick="window.open('https://github.com/lOKESHM152005', '_blank')">View Repositories</button>
     </div>
     <div class="contact-card">
       <img src="image/x-logo.webp" alt="Twitter">
@@ -211,8 +221,8 @@
       <button onclick="window.open('https://wa.me/919655865777?text=Hello%20Lokesh,%20I%20want%20to%20connect%20with%20you!', '_blank')">Chat Now</button>
     </div>
   </div>
-  <button class="home-btn" onclick="window.location.href='ce.html'">⬅</button>
 
+  <button class="arrow-btn" onclick="window.location.href='ce.html'">⬅</button>
   <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
 
   <script>
