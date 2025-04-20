@@ -37,7 +37,21 @@
       z-index: 1000;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
+.logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
 
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     .logo {
       color: #fff;
       font-size: 1.5rem;
@@ -164,7 +178,10 @@
 </head>
 <body>
   <nav>
-    <div class="logo">Lokesh<span>.M</span></div>
+<div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
