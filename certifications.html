@@ -21,8 +21,8 @@
     body {
       background: #000;
       color: white;
-      padding-top: 120px;
-      padding-bottom: 100px;
+      padding-top: 100px;
+      padding-bottom: 80px;
       display: flex;
       flex-direction: column;
     }
@@ -39,11 +39,12 @@
       z-index: 1000;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-.logo {
+
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: white;
     }
@@ -54,13 +55,8 @@
       border-radius: 50%;
       object-fit: cover;
     }
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-    }
 
-   .logo span {
+    .logo span {
       color: #fff;
     }
 
@@ -243,7 +239,7 @@
 </head>
 <body>
   <nav>
-<div class="logo">
+    <div class="logo">
       <img src="logo.png" alt="Logo" class="logo-img">
       <span>Lokesh<span>.M</span></span>
     </div>
@@ -262,45 +258,45 @@
 
   <div class="cert-grid">
     <div class="cert-card">
-      <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(0)" />
+      <img src="oracle_cert.jpg" alt="Oracle Certification" onclick="openLightbox(0)" />
+      <div class="cert-info">
+        <h3>Oracle APEX Cloud Developer</h3>
+        <p>Oracle University - May 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(1)" />
       <div class="cert-info">
         <h3>Gen-AI with Cloud</h3>
         <p>Kongu Engineering College - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(1)" />
+      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(2)" />
       <div class="cert-info">
         <h3>National Hackathon</h3>
         <p>Shridevi Institute - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(2)" />
+      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(3)" />
       <div class="cert-info">
         <h3>IoT Workshop</h3>
         <p>Kongu Engineering College - Feb 2025</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(3)" />
+      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(4)" />
       <div class="cert-info">
         <h3>Hackathon</h3>
-        <p>Kongu Engineering College - MAR 2025</p>
+        <p>Kongu Engineering College - Mar 2025</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(4)" />
+      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(5)" />
       <div class="cert-info">
-        <h3>National Level Technical Symposium</h3>
-        <p>ERODE SENGUNTHAR COLLEGE - 23rd April 2024</p>
-      </div>
-    </div>
-    <div class="cert-card">
-      <img src="certification erode.jpg" alt="Cloud Basics" onclick="openLightbox(5)" />
-      <div class="cert-info">
-        <h3>Two days Seminar</h3>
-        <p>ERODE SENGUNTHAR COLLEGE - AUG 2024</p>
+        <h3>National Technical Symposium</h3>
+        <p>ERODE SENGUNTHAR - April 2024</p>
       </div>
     </div>
   </div>
@@ -317,13 +313,14 @@
 
   <script>
     const certImages = [
+      "oracle_cert.jpg",
       "certifications_kongu .jpg",
       "certifications 33 blg.jpg",
       "certfications 22.jpg",
       "certfication kongu hackathon.jpg",
-      "Whats certfi.jpg",
-      "certification erode.jpg"
+      "Whats certfi.jpg"
     ];
+
     let currentImageIndex = 0;
 
     function openLightbox(index) {
@@ -341,7 +338,6 @@
       document.getElementById("lightboxImage").src = certImages[currentImageIndex];
     }
 
-    // Highlight active nav link
     const currentPage = window.location.pathname.split("/").pop();
     document.querySelectorAll(".menu a").forEach(link => {
       if (link.getAttribute("href") === currentPage) {
@@ -349,7 +345,6 @@
       }
     });
 
-    // Staggered animation delay
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cert-card').forEach((card, i) => {
         card.style.animationDelay = `${i * 0.2}s`;
