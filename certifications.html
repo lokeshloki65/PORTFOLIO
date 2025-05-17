@@ -14,8 +14,8 @@
     }
 
     html, body {
-      height: 100vh;
-      overflow: hidden;
+      height: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -25,8 +25,10 @@
       padding-bottom: 80px;
       display: flex;
       flex-direction: column;
+      animation: pageFadeIn 0.8s ease-in;
     }
 
+   
     nav {
       position: fixed;
       width: 100%;
@@ -67,6 +69,7 @@
     .menu {
       display: flex;
       gap: 25px;
+      flex-wrap: wrap;
     }
 
     .menu a {
@@ -85,18 +88,33 @@
 
     h1 {
       text-align: center;
-      margin: 10px 0;
+      margin: 10px 0 30px;
       color: #00c3ff;
       font-size: 2rem;
       text-shadow: 0 0 10px rgba(0,195,255,0.4);
     }
 
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 0 30px;
-      flex: 1;
+   .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 50px;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .cert-card {
@@ -125,6 +143,11 @@
       object-fit: cover;
       border-radius: 18px 18px 0 0;
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-card img:hover {
+      transform: scale(1.05);
     }
 
     .cert-info {
@@ -184,12 +207,16 @@
       justify-content: center;
       flex-direction: column;
       z-index: 2000;
+      backdrop-filter: blur(5px);
     }
 
     .lightbox img {
       max-width: 90%;
       max-height: 80vh;
       border-radius: 10px;
+      animation: zoomIn 0.5s ease-in-out;
+      transform-origin: center;
+      transition: transform 0.6s ease, opacity 0.6s ease;
     }
 
     .lightbox .nav-btn {
@@ -200,6 +227,7 @@
       color: #fff;
       cursor: pointer;
       padding: 20px;
+      user-select: none;
     }
 
     .lightbox .prev { left: 10px; }
@@ -208,32 +236,24 @@
       position: absolute;
       top: 20px;
       right: 30px;
-      font-size: 5rem;
+      font-size: 4rem;
       color: red;
       cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-      .cert-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.4) rotateY(90deg); opacity: 0; }
+      100% { transform: scale(1) rotateY(0); opacity: 1; }
+    }
+
+    @keyframes rotateZoom {
+      0% { transform: scale(0.5) rotateY(90deg); opacity: 0; }
+      100% { transform: scale(1) rotateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -254,46 +274,46 @@
     </div>
   </nav>
 
-  <h1>🎓My Certifications🎖️</h1>
+  <h1>🎓 My Certifications 🎖️</h1>
 
   <div class="cert-grid">
     <div class="cert-card">
-      <img src="oracle_cert.jpg" alt="Oracle Certification" onclick="openLightbox(0)" />
+      <img src="oracle_cert.jpg" alt="Oracle Certification" onclick="openLightbox(0)" loading="lazy"/>
       <div class="cert-info">
         <h3>Oracle APEX Cloud Developer</h3>
         <p>Oracle University - May 2025</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(1)" />
+      <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(1)" loading="lazy"/>
       <div class="cert-info">
         <h3>Gen-AI with Cloud</h3>
         <p>Kongu Engineering College - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(2)" />
+      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(2)" loading="lazy"/>
       <div class="cert-info">
         <h3>National Hackathon</h3>
         <p>Shridevi Institute - Oct 2024</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(3)" />
+      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(3)" loading="lazy"/>
       <div class="cert-info">
         <h3>IoT Workshop</h3>
         <p>Kongu Engineering College - Feb 2025</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(4)" />
+      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(4)" loading="lazy"/>
       <div class="cert-info">
         <h3>Hackathon</h3>
         <p>Kongu Engineering College - Mar 2025</p>
       </div>
     </div>
     <div class="cert-card">
-      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(5)" />
+      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(5)" loading="lazy"/>
       <div class="cert-info">
         <h3>National Technical Symposium</h3>
         <p>ERODE SENGUNTHAR - April 2024</p>
@@ -334,22 +354,46 @@
     }
 
     function changeSlide(direction) {
-      currentImageIndex = (currentImageIndex + direction + certImages.length) % certImages.length;
-      document.getElementById("lightboxImage").src = certImages[currentImageIndex];
-    }
+      const lightboxImage = document.getElementById("lightboxImage");
 
-    const currentPage = window.location.pathname.split("/").pop();
-    document.querySelectorAll(".menu a").forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-      }
-    });
+      lightboxImage.style.animation = "none";
+      void lightboxImage.offsetWidth; // reflow
+      lightboxImage.style.animation = "rotateZoom 0.6s ease-in-out";
+
+      currentImageIndex = (currentImageIndex + direction + certImages.length) % certImages.length;
+      setTimeout(() => {
+        lightboxImage.src = certImages[currentImageIndex];
+      }, 200);
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cert-card').forEach((card, i) => {
         card.style.animationDelay = `${i * 0.2}s`;
       });
+
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".menu a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+
+        
+      });
     });
   </script>
+  <script>
+  let touchStartX = 0;
+
+  document.getElementById("lightbox").addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.getElementById("lightbox").addEventListener("touchend", e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) changeSlide(1);  // Swipe left
+    if (touchEndX - touchStartX > 50) changeSlide(-1); // Swipe right
+  });
+</script>
+
 </body>
 </html>
