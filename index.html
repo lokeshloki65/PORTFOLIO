@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lokesh M | AI Developer</title>
- <!-- Fonts and Icons -->
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
   <style>
     * {
       margin: 0;
@@ -26,6 +28,7 @@
     body {
       background: linear-gradient(to right, #00090c, #00090c, #00090c);
       color: #fff;
+      cursor: url('fixed_cursor.png') 4 4, auto;
     }
 
     nav {
@@ -41,7 +44,8 @@
       z-index: 1000;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
-.logo {
+
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -53,16 +57,10 @@
     .logo-img {
       width: 60px;
       height: 60px;
-      border-radius: 50%;
       object-fit: cover;
     }
-    .logo {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
 
-   .logo span {
+    .logo span {
       color: #fff;
     }
 
@@ -127,6 +125,7 @@
       margin-top: 10px;
       color: #eee;
     }
+
     .social-icons {
       display: flex;
       justify-content: center;
@@ -151,10 +150,10 @@
       bottom: 0;
       width: 100%;
       text-align: center;
-      padding: 15px;
-      font-size: 1rem;
+      padding: 1px;
+      font-size: 0.9rem;
       color: #aaa;
-      background: rgba(0, 0, 0, 0.3);
+      background: #00090c;
     }
 
     .home-btn, .arrow-btn {
@@ -203,12 +202,32 @@
         font-size: 1.1rem;
       }
     }
+
+    .resume-btn {
+      padding: 8px 20px;
+      font-size: 15px;
+      border-radius: 25px;
+      background-color: #00c3ff;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 0.10px;
+      margin-left: 110px;
+      box-shadow: 0 0 5px #0066ff;
+    }
+
+    .resume-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 5px #3976d2, 0 0 25px #4381e0;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <nav>
-<div class="logo">
+    <div class="logo">
       <img src="logo.png" alt="Logo" class="logo-img">
       <span>Lokesh<span>.M</span></span>
     </div>
@@ -227,24 +246,28 @@
     <img src="image/lokeshM1.jpg" alt="Lokesh M" class="profile-img">
     <div class="social-icons">
       <a href="https://github.com/lokeshloki65" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/lokesh-loki-265b832b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.linkedin.com/in/lokesh-loki-265b832b3" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://www.instagram.com/lovely_loki._65/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/LOKESHM935732?t=-Jim2lnoqTW1If9nuBbDow&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://x.com/LOKESHM935732" target="_blank"><i class="fab fa-twitter"></i></a>
       <a href="mailto:Lokesh152005@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-    
+
     <h1>Hi, I'm Lokesh M</h1>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
+      <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
+      <div id="resume-lottie" style="width: 100px; height: 100px;"></div>
+    </div>
+
     <div class="typed-text">
       <span id="typed"></span>
     </div>
   </header>
 
-  <footer>
-    &copy; 2025 Lokesh M | All Rights Reserved
-  </footer>
-
+  
   <button class="arrow-btn" onclick="window.location.href='about.html'">➡</button>
 
+  <!-- Scripts -->
   <script>
     AOS.init();
 
@@ -253,7 +276,6 @@
         'Artificial Intelligence and Data Science ',
         'Web Developer 💻',
         'Java, Python Programmer 🐍',
-        
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -267,6 +289,14 @@
       if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
       }
+    });
+
+    lottie.loadAnimation({
+      container: document.getElementById('resume-lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets4.lottiefiles.com/packages/lf20_dqt8bqgh.json'
     });
   </script>
 </body>
