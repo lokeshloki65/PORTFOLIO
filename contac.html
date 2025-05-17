@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Lokesh M</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -15,12 +16,9 @@
 
     html, body {
       height: 100vh;
-      overflow: hidden;
-    }
-
-    body {
-      background-color: #000;
+      background-color: #0f0f0f;
       color: white;
+      overflow: hidden;
     }
 
     nav {
@@ -37,6 +35,7 @@
       z-index: 1000;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
+
     .logo {
       display: flex;
       align-items: center;
@@ -53,13 +52,7 @@
       object-fit: cover;
     }
 
-    .logo {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-   .logo span {
+    .logo span {
       color: #fff;
     }
 
@@ -86,117 +79,141 @@
       border-bottom: 2px solid #00c3ff;
     }
 
-    .contact-grid {
-      height: calc(100vh - 90px);
-      margin-top: 90px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 20px;
-      padding: 20px 40px;
+    .contact-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 90px;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    .contact-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 15px;
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .contact-container {
+      background: rgba(227, 221, 221, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 0 25px #329bdd;
+      border: 1px solid #329bdd;
+      max-width: 480px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .contact-container h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #329bdd;
+      margin-bottom: 30px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0, 195, 255, 0.15);
-      transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.8s ease forwards;
+      border-bottom: 3px solid #329bdd;
+      display: inline-block;
     }
 
-    .contact-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .contact-card img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid #00c3ff;
-      margin-bottom: 12px;
-    }
-
-    .contact-card h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: #00c3ff;
-    }
-
-    .contact-card button {
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    .contact-form input,
+    .contact-form textarea {
+      padding: 14px 18px;
       border: none;
-      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .contact-form button {
+      background: linear-gradient(to right, #329bdd, #329bdd);
       color: white;
       font-weight: bold;
-      font-size: 0.9rem;
-      border-radius: 25px;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease;
     }
 
-    .contact-card button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    .contact-form button:hover {
+      transform: scale(1.03);
     }
 
-    .home-btn, .arrow-btn {
+    .social-icons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      font-size: 36px;
+      z-index: 1;
+    }
+
+    .social-icons.left {
+      left: 150px;
+    }
+
+    .social-icons.right {
+      right: 150px;
+    }
+
+    .social-icons a {
+      color: #329bdd;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .social-icons {
+        display: none;
+      }
+    }
+
+    .home-btn {
       position: fixed;
       bottom: 20px;
+      right: 20px;
+      background: #00c3ff;
+      color: white;
       padding: 15px;
       font-size: 22px;
       border: none;
       border-radius: 50%;
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .home-btn {
-      right: 20px;
-      background: #00c3ff;
-      color: white;
       box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+      transition: transform 0.3s;
+      z-index: 1001;
     }
 
-    .arrow-btn {
-      left: 20px;
-      background: #ff9800;
-      color: white;
-      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
-    }
-
-    .home-btn:hover, .arrow-btn:hover {
+    .home-btn:hover {
       transform: scale(1.1);
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Staggered animation delays */
-    .contact-card:nth-child(1) { animation-delay: 0.2s; }
-    .contact-card:nth-child(2) { animation-delay: 0.4s; }
-    .contact-card:nth-child(3) { animation-delay: 0.6s; }
-    .contact-card:nth-child(4) { animation-delay: 0.8s; }
-    .contact-card:nth-child(5) { animation-delay: 1s; }
-    .contact-card:nth-child(6) { animation-delay: 1.2s; }
-
   </style>
 </head>
 <body>
+  <!-- Navigation Menu -->
   <nav>
-<div class="logo">
+    <div class="logo">
       <img src="logo.png" alt="Logo" class="logo-img">
       <span>Lokesh<span>.M</span></span>
     </div>
@@ -207,52 +224,60 @@
       <a href="qualification.html">Qualification</a>
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
-      <a href="contac.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
   </nav>
 
-  <div class="contact-grid">
-    <div class="contact-card">
-      <img src="image/insta.jpg" alt="Instagram">
-      <h3>Instagram</h3>
-      <button onclick="window.open('https://www.instagram.com/lovely_loki._65/', '_blank')">Follow</button>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <!-- Left Social Icons -->
+    <div class="social-icons left">
+      <a href="https://linkedin.com/in/lokeshloki65" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:imlokesh152005@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/919986403978" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <div class="contact-card">
-      <img src="image/gmail1.jpg" alt="Gmail">
-      <h3>Gmail</h3>
-      <button onclick="window.open('mailto:Lokesh152005@gmail.com')">Mail Me</button>
-    </div>
-    <div class="contact-card">
-      <img src="image/linkedin1.webp" alt="LinkedIn">
-      <h3>LinkedIn</h3>
-      <button onclick="window.open('https://www.linkedin.com/in/lokesh-loki-265b832b3/', '_blank')">Connect</button>
-    </div>
-    <div class="contact-card">
-      <img src="image/github.png" alt="GitHub">
-      <h3>GitHub</h3>
-      <button onclick="window.open('https://github.com/lokeshloki65', '_blank')">View Repositories</button>
-    </div>
-    <div class="contact-card">
-      <img src="image/x-logo.webp" alt="Twitter">
-      <h3>Twitter</h3>
-      <button onclick="window.open('https://x.com/LOKESHM935732?t=iKVxWXF2--G2FwLwhwjO1g&s=09', '_blank')">Follow</button>
-    </div>
-    <div class="contact-card">
-      <img src="image/whatsapp.png" alt="WhatsApp">
-      <h3>WhatsApp</h3>
-      <button onclick="window.open('https://wa.me/+918072894184?text=Hello%20Lokesh,%20I%20want%20to%20connect%20with%20you!', '_blank')">Chat Now</button>
-    </div>
-  </div>
 
+    <!-- Contact Container -->
+    <div class="contact-container">
+      <h2>Contact</h2>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkgryqgb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right Social Icons -->
+    <div class="social-icons right">
+      <a href="https://github.com/lokesh152005" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/lovely_lokesh_1520" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/+919655865777lane"></i></a>
+    </div>
+  </section>
+
+  <!-- Home Button -->
   <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
 
+  <!-- Form Submission Script -->
   <script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const menuLinks = document.querySelectorAll(".menu a");
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    menuLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
+      if (response.ok) {
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("❌ Something went wrong. Please try again later.");
       }
     });
   </script>
